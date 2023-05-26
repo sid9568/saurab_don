@@ -1,0 +1,20 @@
+
+<h1>This is another page</h1>
+<div><%= link_to "go to home page", root_path %></div>
+
+
+<div style="margin-top: 3rem;">
+  <%= form_with scope: :any, url: post_something_path do |form| %>
+      <%= form.submit 'Post something' %>
+  <% end %>
+  <turbo-frame id="messages">
+    <div>An empty message</div>
+  </turbo-frame>
+</div>
+
+Copy 
+
+
+
+
+

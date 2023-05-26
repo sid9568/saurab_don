@@ -1,0 +1,20 @@
+<section>
+
+    <%= turbo_frame_tag 'anyframe' do %>
+            
+      <div>
+          <h2>Frame view</h2>
+          <%= form_with scope: :any, url: turbo_frame_submit_path, local: true do |form| %>
+              <%= form.label :anynumber, 'Type an integer (odd or even)', 'class' => 'my-0  d-inline'  %>
+              <%= form.text_field :anynumber, type: 'number', 'required' => 'true', 'value' => "#{local_assigns[:anynumber] || 0}",  'aria-describedby' => 'anynumber' %>
+              <%= form.submit 'Submit this number', 'id' => 'submit-number' %>
+          <% end %>
+      </div>
+      <div>
+        <h2>Data of the view</h2>
+        <pre style="font-size: .7rem;"><%= JSON.pretty_generate(local_assigns) %></pre> 
+      </div>
+      
+    <% end %>
+
+</section>
